@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+#root{
+  height:100%;
+}
+
+.main-header{
+  color:#fff;
+  font-size:18px;
+  font-weight: bold;
+}
+
+.main-content{
+  padding:20px;
+  padding-top: 5px;
+  height: 100%;
+}
