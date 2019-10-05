@@ -22,15 +22,20 @@ export default {
             const tags="android";
             let t= new Date();
             const fromdate = parseInt(t.setDate(t.getDate() - 7)/1000);
-
-            const query="page=1&pagesize=10&fromdate=" + fromdate + "&todate=" + now + "&order=desc&sort=creation&tagged=" + tags + "&site=stackoverflow&filter=!BL6SJ7UbShtQIju678hg0XFHKlgc3m";
+            const query="page=1&pagesize=10&fromdate=" + fromdate + "&todate=" + now + "&order=desc&sort=creation&tagged=" + tags + "&site=stackoverflow&filter=!-lBwSMnedIpLk8_)t7QzgDTRpN1z-mbtQGSFwU4NuW(--BWqW6RZRH";
             return axios
-            .get(`${baseUrl}/search?` + query)
-            // .then(res => res.data)
-            // .catch(err => {
-            //     //handelError(err);
-            //     throw err;
-            // })
+            .get(`${baseUrl}/questions?` + query)            
+        },
+        getTopPosts: data =>
+        {
+            console.log(data);
+            const tags="android";
+            let t= new Date();
+            const fromdate = parseInt(t.setDate(t.getDate() - 7)/1000);
+
+            const query="page=1&pagesize=10&fromdate=" + fromdate + "&todate=" + now + "&sort=votes&order=desc&sort=creation&tagged=" + tags + "&site=stackoverflow&filter=!-lBwSMnedIpLk8_)t7QzgDTRpN1z-mbtQGSFwU4NuW(--BWqW6RZRH";
+            return axios
+            .get(`${baseUrl}/questions?` + query)            
         },
 	},
 	

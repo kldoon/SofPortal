@@ -11,16 +11,16 @@ export default class TopVotedQuestions extends Component {
         this.state = {
             posts: new Date(),
         }
-        // api.posts.getRecentPosts().then(res => {
-        //     console.log(res.data);
-        //     this.setState({posts: res.data.items});
-        // })
-        //     .catch(err => {
-        //         console.log(err);
-        //     });
+        api.posts.getTopPosts().then(res => {
+            console.log("getTopPosts");
+            console.log(res.data);
+            this.setState({posts: res.data.items});
+        })
+            .catch(err => {
+                console.log(err);
+            });
 
     }
-
 
     render() {
         return (

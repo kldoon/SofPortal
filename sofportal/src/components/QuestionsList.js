@@ -12,7 +12,7 @@ function QuestionsList(props) {
                 props.posts.map((item)=> 
                 <Panel key={item.question_id} header={React.createElement('div', {}, <List.Item.Meta
                 avatar={<Avatar src={item.owner.profile_image} />}
-                title={<label> <b  dangerouslySetInnerHTML={{__html: item.title}} /><a href={item.link} target="blank" style={{float:"right",marginTop:"10px"}}>
+                title={<label> {item.score} <b  dangerouslySetInnerHTML={{__html: item.title}} /><a href={item.link} target="blank" style={{float:"right",marginTop:"10px"}}>
                     <img src="./gotosof.png" alt="goto stack overflow" width="24"/></a></label>}
                 description={(new Date(item.creation_date*1000)).toLocaleDateString() +" "+(new Date(item.creation_date*1000)).toLocaleTimeString() +" by: "+item.owner.display_name}
                 />
