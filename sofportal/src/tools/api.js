@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // import { handelResponse, handelError } from './handelResponse';
 
-const now= parseInt(new Date().getTime()/1000);
+const now= parseInt(new Date("2019-09-30").getTime()/1000);
 const baseUrl = process.env.REACT_APP_API_URL;
 const getBaseUrl = () => baseUrl;
 const setHeaders = t => {
@@ -23,7 +23,7 @@ export default {
             let t= new Date();
             const fromdate = parseInt(t.setDate(t.getDate() - 7)/1000);
 
-            const query="page=1&pagesize=10&fromdate=" + fromdate + "&todate=" + now + "&order=desc&sort=creation&tagged=" + tags + "&site=stackoverflow";
+            const query="page=1&pagesize=10&fromdate=" + fromdate + "&todate=" + now + "&order=desc&sort=creation&tagged=" + tags + "&site=stackoverflow&filter=!BL6SJ7UbShtQIju678hg0XFHKlgc3m";
             return axios
             .get(`${baseUrl}/search?` + query)
             // .then(res => res.data)

@@ -3,7 +3,7 @@ import QuestionsList from './QuestionsList'
 import api from '../tools/api'
 
 
-export default class NewestQuestions extends Component {
+export default class TopVotedQuestions extends Component {
 
     constructor(props) {
         super(props);
@@ -11,21 +11,20 @@ export default class NewestQuestions extends Component {
         this.state = {
             posts: new Date(),
         }
-        api.posts.getRecentPosts().then(res => {
-            console.log(res.data);
-            this.setState({posts: res.data.items});
-        })
-            .catch(err => {
-                console.log(err);
-            });
-
+        // api.posts.getRecentPosts().then(res => {
+        //     console.log(res.data);
+        //     this.setState({posts: res.data.items});
+        // })
+        //     .catch(err => {
+        //         console.log(err);
+        //     });
 
     }
 
 
     render() {
         return (
-            <div>
+            <div>                
                 {this.state.posts.length && (
                     <QuestionsList posts={this.state.posts} />
                 )}                

@@ -2,13 +2,14 @@ import React from 'react';
 import './App.css';
 import { Layout, Tabs, Icon } from 'antd';
 import NewestQuestions from './components/NewestQuestions'
+import TopVotedQuestions from './components/TopVotedQuestions'
 function App() {
   const { Header,  Content } = Layout;
   const { TabPane } = Tabs;
 
   return (
-    <div className="App" style={{height:"100%"}}>
-      <Layout  style={{height:"100%"}}>
+    <div className="App" >
+      <Layout>
         <Header className="main-header">SOFPortal</Header>
         <Content className="main-content">
           <Tabs defaultActiveKey="1">
@@ -32,7 +33,7 @@ function App() {
               }
               key="2"
             >
-              Tab 2xxxxxxxxxxxxxxxxxxxxx
+              <TopVotedQuestions />
             </TabPane>
             <TabPane
               tab={
