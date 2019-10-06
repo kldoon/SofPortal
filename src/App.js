@@ -13,7 +13,7 @@ function App() {
       <Layout>
         <Header className="main-header"><img src="./logo.png" height="55" alt="stack overflow logo"/> SOFPortal</Header>
         <Content className="main-content">
-          <Tabs defaultActiveKey="1">
+          <Tabs defaultActiveKey="1" destroyInactiveTabPane={true}>
             <TabPane
               tab={
                 <span>

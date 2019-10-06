@@ -21,7 +21,6 @@ export default class NewestQuestions extends Component {
             });
     }
 
-
     render() {
         return (
             <div >
