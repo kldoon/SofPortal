@@ -26,7 +26,7 @@ export default class TopVotedQuestions extends Component {
         return (
             <div>                
                 {this.state.posts.length && (
-                    <QuestionsList posts={this.state.posts} />
+                    <QuestionsList posts={this.state.posts}  topVoted/>
                 )}                
             </div>
         )

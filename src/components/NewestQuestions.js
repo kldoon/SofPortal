@@ -18,8 +18,6 @@ export default class NewestQuestions extends Component {
             .catch(err => {
                 console.log(err);
             });
-
-
     }
 
 

@@ -3,6 +3,7 @@ import './App.css';
 import { Layout, Tabs, Icon } from 'antd';
 import NewestQuestions from './components/NewestQuestions'
 import TopVotedQuestions from './components/TopVotedQuestions'
+import Settings from './components/Settings'
 function App() {
   const { Header,  Content } = Layout;
   const { TabPane } = Tabs;
@@ -10,7 +11,7 @@ function App() {
   return (
     <div className="App" >
       <Layout>
-        <Header className="main-header">SOFPortal</Header>
+        <Header className="main-header"><img src="./logo.png" height="55" alt="stack overflow logo"/> SOFPortal</Header>
         <Content className="main-content">
           <Tabs defaultActiveKey="1">
             <TabPane
@@ -44,7 +45,7 @@ function App() {
               }
               key="3"
             >
-              Settings
+              <Settings />
             </TabPane>
 
           </Tabs>
