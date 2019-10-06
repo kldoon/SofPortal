@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import QuestionsList from './QuestionsList'
+import { Icon } from 'antd'
 import api from '../tools/api'
 
 
@@ -9,7 +10,7 @@ export default class TopVotedQuestions extends Component {
         super(props);
 
         this.state = {
-            posts: new Date(),
+            posts: [],
         }
         api.posts.getTopPosts().then(res => {
             console.log("getTopPosts");
@@ -25,9 +26,11 @@ export default class TopVotedQuestions extends Component {
     render() {
         return (
             <div>                
-                {this.state.posts.length && (
+                {this.state.posts.length>0 && (
                     <QuestionsList posts={this.state.posts}  topVoted/>
-                )}                
+                )}
+                {this.state.posts.length===0 && 
+                    <Icon type="sync"  spin style={{fontSize:"25px",width: "100%", height:"500px",margin:"0 auto" }} />}                
             </div>
         )
     }

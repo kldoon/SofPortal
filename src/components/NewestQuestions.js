@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Icon } from 'antd'
 import QuestionsList from './QuestionsList'
 import api from '../tools/api'
 
@@ -9,7 +10,7 @@ export default class NewestQuestions extends Component {
         super(props);
 
         this.state = {
-            posts: new Date(),
+            posts: [],
         }
         api.posts.getRecentPosts().then(res => {
             console.log(res.data);
@@ -23,10 +24,10 @@ export default class NewestQuestions extends Component {
 
     render() {
         return (
-            <div>
-                {this.state.posts.length && (
-                    <QuestionsList posts={this.state.posts} />
-                )}                
+            <div >
+                {this.state.posts.length>0 && <QuestionsList posts={this.state.posts} />}
+                {this.state.posts.length===0 && 
+                    <Icon type="sync"  spin style={{fontSize:"25px",width: "100%", height:"500px",margin:"0 auto" }} />}
             </div>
         )
     }

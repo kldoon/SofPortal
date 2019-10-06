@@ -43,3 +43,7 @@
 .answer.accepted{
   border-color:#52c41a;
 }
+
+.settingRow{
+  margin-top: 20px;
+}
